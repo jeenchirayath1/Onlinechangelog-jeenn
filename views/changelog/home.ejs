@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=pageTitle%></title>
+    <link href="css3/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<!-- Custom Theme files -->
+<link href="css3/style.css" rel="stylesheet" type="text/css" media="all"/>
+<!--js-->
+<script src="js3/jquery-2.1.1.min.js"></script> 
+<!--icons-css-->
+<link href="css3/font-awesome.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+    
+
+   <!---- <style>
+        .navbar{
+            position: fixed;
+            top: 0px;
+            left: 0;
+            align-items:center;
+            width:65px;
+            height: 100%;
+            background:#009879 ;
+            border-right: 2px solid blue;
+            box-shadow: 0 0 10px 5px rgba(0, 0,0,0.25);
+        }
+        .navbar__link{
+            width: 65px;
+            height: 100%;
+           display: flex;
+           
+           background:#009879 ;
+           color: antiquewhite;
+           padding: 12px;
+           text-decoration: none;
+           font-weight:bold ;
+           font-size: 0.95rem;
+           border-bottom: 1px solid #009879; 
+        }
+          
+        
+    </style>-->
+
+
+
+
+    <style>
+        body {
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        
+       /* .mobile-container {
+          max-width: 480px;
+          margin: auto;
+          background-color: #555;
+          height: 500px;
+          color: white;
+          border-radius: 10px;
+          
+        }*/
+        .navbar{
+            position: fixed;
+            top: 0px;
+            left: 0;
+            align-items:center;
+            width:65px;
+            height: 100%;
+            background:#009879 ;
+            border-right: 2px solid blue;
+            box-shadow: 0 0 10px 5px rgba(0, 0,0,0.25);
+        }
+        
+        .topnav {
+          overflow: hidden;
+          background-color: #333;
+          width:200px;
+          
+         /* display:none*/
+        }
+        
+        .topnav #myLinks {
+          display: none;
+        }
+        
+        .topnav a {
+          color: white;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+          display: block;
+        }
+        
+        .topnav a.icon {
+           
+          background: black;
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 0;
+          width:65px;
+            height: 100%;
+            background:#009879 ;
+            border-right: 2px solid blue;
+            box-shadow: 0 0 10px 5px rgba(0, 0,0,0.25);
+        }
+        
+        .topnav a:hover {
+          background-color: #ddd;
+          color: black;
+          padding-left: 5px;
+        }
+        
+        .active {
+          background-color: #4CAF50;
+          color: white;
+        }
+        .bt{
+            border-radius: 20px;
+		color: white;
+		height: 40px;
+		width: 150px;
+		background-color:rgb(32, 26, 26);
+		margin-left:10px;
+        margin-top: 50px;
+        float: right;
+
+        }
+        .ll{
+            
+            float: right;
+        }
+        </style>
+        
+        </head>
+        <body>
+        
+        <!-- Simulate a smartphone / tablet
+        <div class="mobile-container"> -->
+            <div class="container">
+        <!-- Top Navigation Menu -->
+        <div class="topnav"id="top">
+           <span></span>
+          <div id="myLinks">
+           <% accounts.forEach(account=>{%>
+    
+            <a href="/home/<%=account._id%>" class=""><%=account.accountId.weburl%></a>
+                         <%  })%>
+                         <a href="/home/createaccount">New Account</a>
+                         <a href="#">Settings</a>
+                         
+          </div>
+       
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            
+            <span class="material-icons">list </span> 
+          </a>
+      
+        </div>
+        
+        
+        
+        <!-- End smartphone / tablet look -->
+        </div>
+        
+        <script>
+        function myFunction() {
+          var x = document.getElementById("myLinks");
+          if (x.style.display === "block") {
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+          }
+        }
+        </script>
+        
+   <!----<div class="navbar">
+        <!--<div class="dropdown" id=nav-btn></div>
+        <a href="#" class="navbar__link">
+           <span class="material-icons">list </span> 
+           
+        </a>
+        </div>-->
+       
+             <div >
+                <!---- <form action="/home/switch_account" method="POST">-->
+                    
+                        
+               
+             
+   
+       <!-- <form action="/logout" method="post">
+          <button type="submit">Logout</button>
+        </form>--></div>
+
+       
+    
+        </div>
+        
+        <div class="ll">
+            <form action="/logout" method="post">
+                <button type="submit" class="bt">Logout</button>
+                  </form>
+                </div>
+
+    <div class="container">
+       <center>
+            
+                <h1><%=head%></h1>  
+    
+     
+        <a href="/home/newchangelog" class="btn mb-2 btn-success"><h4>Create your changelog</h4> </a>
+        <h1></h1>
+        <nav>
+            
+            <% changelog.forEach(changelog => { %>
+                <h4 class="card-title"><%= changelog.title %></h4>
+                <div class="card-text mb-2"><%= changelog.category %></div>
+                <div class="card-text mb-2"><%- changelog.sanitizedHtml %></div>
+                <div class="card-subtitle text-muted mb-2">
+                    <%= changelog.createdAt %>
+                  </div>
+                  
+                  <a href="home/show/<%= changelog.id %>" class="btn btn-primary">Read More</a>
+             <form action="/home/delete-changelog" method="POST" class="d-inline">
+                <input type="hidden" value="<%= changelog._id %>" name="changelogId">
+                <button class="btn btn-danger" type="submit">Delete</button>
+            </form>
+            <% }) %>
+            
+            
+        </nav> 
+    
+    </div>
+    
+    </center>
+    </body>
+
+</body>
+</html>

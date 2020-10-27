@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHANGELOG</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+</head>
+    <style>
+        .navbar{
+            position: fixed;
+            top: 0;
+            left: 0;
+            align-items:center;
+            width:65px;
+            height: 100%;
+            background:#009879 ;
+            border-right: 2px solid blue;
+            box-shadow: 0 0 10px 5px rgba(0, 0,0,0.25);
+        }
+        .navbar__link{
+            width: 65px;
+            height: 100%;
+           display: flex;
+           
+           background:#009879 ;
+           color: antiquewhite;
+           padding: 12px;
+           text-decoration: none;
+           font-weight:bold ;
+           font-size: 0.95rem;
+           border-bottom: 1px solid #009879; 
+        }
+    </style>
+
+
+
+<body>
+    
+
+    <div class="navbar">
+        <div class="dropdown"></div>
+        <a href="#" class="navbar__link">
+            <span class="material-icons">list</span>
+            
+            
+         </a>
+    
+       
+    </div>
+<body>
+    <div class="container">
+        <h1 class='mb-1'><%=changelog.title%></h1>
+        <div class="text-muted mb-2">
+            <%= changelog.createdat %>
+        </div>
+        <a href="/home" class="btn btn-secondary">All changelog</a>
+        <a href="/home/edit/<%= changelog._id %>?edit=true" class="btn btn-info">Edit</a>
+    
+        <div>
+            <%- changelog.sanitizedHtml %>
+        </div>
+
+    </div>
+
+</body>
+</html> 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Edit Changelog </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #333;
+        }
+        
+        li {
+          float: left;
+        }
+        
+        li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        
+        li a:hover:not(.active) {
+          background-color: #111;
+        }
+        
+        .active {
+          background-color: #4CAF50;
+        }
+        </style>
+   
+</head>
+
+<body>
+    <ul>
+        <li><a class="" href="/home">Home</a></li>
+        
+      </ul>
+    <div class="form-group">
+        <h4 class="btn mb-2 btn-success" >EDIT YOUR CHANGELOG!</h4>
+    </div>
+  <% if(editing){ %>
+    <div class="container">
+        <h1 class='mb-1'>  <br><%=changelog.title%></h1>
+        <div class="text-muted mb-2">
+            <%= changelog.createdAt %>
+            <%- changelog.sanitizedHtml %>
+        </div>
+
+    </div>
+    <div>
+        <form action="/edit " method="post">
+            <div class="form-group">
+            <input type="hidden" value="<%= changelog._id %>" name="changelog_Id"></div>
+ 
+            <%- include('entry') %>
+            
+         </form>
+    </div>
+ 
+<% }%>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+    <link rel="stylesheet" href="/css1/login.css">
+    <link rel="stylesheet" href="/css1/home.css">
+    <link href="vendors/material-icon/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendors/linears-icon/style.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Rev slider css -->
+    <link href="vendors/revolution/css/settings.css" rel="stylesheet">
+    <link href="vendors/revolution/css/layers.css" rel="stylesheet">
+    <link href="vendors/revolution/css/navigation.css" rel="stylesheet">
+    
+    <!-- Extra plugin css -->
+    <link href="vendors/bootstrap-selector/bootstrap-select.css" rel="stylesheet">
+    <link href="vendors/bootatrap-date-time/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="vendors/owl-carousel/assets/owl.carousel.css" rel="stylesheet">
+    
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+
+</head>
+<body>
+   <div class="main_menu">
+   <!-- <header class="main_menu_area">
+        <a href="#"><img id="logo" src="/log1.jpg"></a>
+        <ul class="collapse navbar-collapse" id="bs-example-navbar-collapse-2"> 
+            <li><a href="" id="a">Home</a></li></ul></header>
+            <br>-->
+            <div class="main_menu_area">
+                <a><img id="logo" src="/css1/log1.jpg"></a>
+                <ul class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                    <li><a href="/" id="a">Home</a></li> 
+                    <li><a href="/login" id="a">Login</a></li>
+                           <li><a href="/signup" id="a">Register</a></li><br><br></ul></div>
+    <div class="second">
+    <form action="/login" method="post" >
+        
+        <center><div> <label for="uname"  ><b><B>LOGIN</B></b></label></div><br><br>
+            <div class="container">
+                <% if (errorMessage) { %>
+                    <div class="user-message user-message--error"><%= errorMessage %></div>
+                <% } %>
+    
+        <input type="text" placeholder="Enter Username" name="email" required><br>
+       
+        <input type="password" placeholder="Enter Password" name="password" required><br>
+        
+        <button type="submit">Login</button></div>
+        <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember Me
+        </label><br>
+        <span class="psw"><a href="#">Forgot password?</a></span><br>
+        <span class="psw">Not yet registered <a href="/signup">Register here</a></span>
+        </div>
+    
+        
+        </center>
+        
+        </div>
+    </form>
+</div>
+</div>
+</body>
+</html>

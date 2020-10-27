@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Account </title>
+    <style> 
+      input[type=text] {
+        width: 50%;
+        padding: 20px 20px;
+        margin: 6px 0;
+        box-sizing: border-box;
+      }
+      .button {
+  background-color:rgb(0, 128, 75); 
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #333;
+        }
+        
+        li {
+          float: left;
+        }
+        
+        li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        
+        li a:hover:not(.active) {
+          background-color: #111;
+        }
+        
+        .active {
+          background-color: #4CAF50;
+        }
+      </style>
+
+<body>
+    <ul>
+        <li><a class="" href="/home">Home</a></li>
+        
+      </ul>
+  <center>
+  <div class="new">
+    <div class="heading">
+      <h1>Create Account</h1><br>
+    </div>
+    <form action='/home/createaccount' method="POST">
+<input type = text name=companyname placeholder="company _name"><br>
+<input type = text name=weburl placeholder="website URL" required><br>
+<button type="submit" class="button">create account</button></form>
+  </div>
+  
+  </div></center>
+</body>
+
+</html>

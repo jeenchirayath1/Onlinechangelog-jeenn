@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> </title>
+    <link href="css3/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<!-- Custom Theme files -->
+<link href="/css3/style.css" rel="stylesheet" type="text/css" media="all"/>
+<!--js-->
+<script src="js3/jquery-2.1.1.min.js">
+
+function myFunction() {
+  console.log("test");
+  console.assert(document.getElementById("demo"), "You have no element with ID 'demo'");
+
+var text1= "Hello World"
+  document.getElementById("markdown").value =text1;
+}
+
+
+</script> 
+<!--icons-css-->
+<link href="css3/font-awesome.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+   
+
+
+<body>
+    
+<center>
+   
+
+<br><div class="form-group">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <label for="title">Title</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input required  data-title="" id="title" name="title" value="<%= changelog.title%>"  class="title" type="text" placeholder="Changelog title" style="border:solid 3px green" >
+
+   </div>
+   <br>
+   <div class="form-group">
+    <label >Category </label>&nbsp;&nbsp;&nbsp;
+   <select data-category="" name="category" style="border:solid 3px green" >
+    <optgroup label="category">
+  </div>
+  <option  value="none"  <% if(changelog.category === 'none'){%> selected='true'<%} %> >none </option>
+  <option  value="New"   <% if( changelog.category  === 'New'){%> selected='true'<%} %>>New  </option>
+    <option  value="Fix" <% if(changelog.category   === 'Fix'){%>selected='true'<% } %>> Fix </option>
+    <option  value="Improvement" <% if(changelog.category === 'Improvement'){%>selected='true'<% } %>>Improvement </option>
+    </optgroup>
+  </select>
+  </div>
+  <div class="form-group">
+    <label >Content</label>
+    
+   <center><textarea required data-markdown="" name="markdown" id="markdown" wrap="on" cols="80" rows="10" style="border:solid 3px green"><%= changelog.markdown%></textarea>
+    </textarea></center> 
+
+    <button onclick="myFunction()"> Click me </button>
+    <button onclick="getElementById('markdown').innerHTML =Date()">What is the time?</button>
+    <input class="button" type="button" id="bold" value="Bold"/>
+    <input class="button" type="button" id="italic" value="italic" />
+  </div>
+
+   
+<a href="/home" class="btn btn-primary">Cancel</a>   
+<button type = "submit" class="btn btn-primary">Save</button>
+</center>
+
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+    <link rel="stylesheet" href="/css1/register.css">
+    <link rel="stylesheet" href="/css1/home.css">
+  
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Rev slider css -->
+
+    
+    <link href="vendors/revolution/css/navigation.css" rel="stylesheet">
+    
+    
+    
+    
+    
+
+    
+
+</head>
+<body>
+    <div class="main_menu_area">
+        <a ><img class="logo" src="/css1/log1.jpg"></a>
+        <ul class="collapse navbar-collapse" id="bs-example-navbar-collapse-2"> 
+            <li><a href="/" id="a">Home</a></li> 
+            <li><a href="/login" id="a">Login</a></li>
+                   <li><a href="/signup" id="a">Register</a></li><br><br></ul></div>
+    
+    <form action="/signup" method="post">
+        <div class="imgcontainer">
+        <img src="img_avatar2.png" alt="Avatar" class="avatar">
+        </div>
+        <center><div> <label for="uname"  ><b><B>SIGN UP</B></b></label><br></div></center>
+    
+        <div class="container">
+            <% if (errorMessage) { %>
+                <div class="user-message user-message--error"><%= errorMessage %></div>
+            <% } %>
+            
+        <label for="name"><b>Name</b></label><br>
+        <input type="text" placeholder="Enter  your name" name="name" id="name"required><br>
+
+        <label for="email"><b>Email</b></label><br>
+        <input type="email" placeholder="Enter email adress" name="email" id="email" required><br>
+
+        <label for="weburl"><b>Website Address</b></label><br>
+        <input type="url" placeholder="Enter your Website adress" name="weburl" id="weburl"required><br>
+    
+        <label for="password"><b>Password</b></label><br>
+        <input type="password" placeholder="Enter your password" name="password" id="password" required><br>
+    
+        <label for="confirmpassword"><b>Confirm Password</b></label><br>
+        <input type="password" placeholder="Confirm password" name="confirmpassword" id="confirmpassword" required><br>
+    
+        <button type="submit" >Register</button>
+
+        <button type="button" class="cancelbtn">Cancel</button>
+        
+        </div>
+    </form>
+</body>
+</html>
